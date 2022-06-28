@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    /* ### Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.3rem;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--Light-grayish-blue);
+}
+main {
+    margin: 70px auto;
+    padding: 0 22px;
+}
+/* ?--------------FOR ALL CARDS-------------- */
+.cards {
+    margin-top: 25px;
+    padding: 26px 36px;
+    border-radius: 10px;
+}
+.cards .perfil img {
+    width: 35px;
+    border-radius: 50%;
+    border: 3px solid hsl(263, 55%, 72%);
+}
+.cards .perfil {
+    display: flex;
+}
+.cards .name-status {
+    margin: 4px 0 0 20px;
+}
+.cards .name {
+    font-weight: 600;
+    color: var(--Light-gray);
+}
+.cards .status {
+    font-size: 1.1rem;
+    color: var(--Light-gray);
+}
+.cards h4 {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--White);
+}
+.cards p {
+    margin-top: 2rem;
+    line-height: 2rem;
+    font-size: 1.28rem;
+    color: var(--Light-gray);
+}
+
+/* ?--------------CARD1-------------- */
+.card1 {
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+    background-color: var(--Moderate-violet);
+}
+
+/* ?--------------CARD2-------------- */
+.card2 {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+/* ?--------------CARD3-------------- */
+.card3 {
+    background-color: var(--White);
+}
+.card3 .name, .card3 .status, .card3 p,.card3 h4 {
+    color: var(--Very-dark-grayish-blue);
+}
+
+/* ?--------------CARD4-------------- */
+.card4 {
+    background-color: var(--Very-dark-blackish-blue);
+}
+.card4 .status {
+    color: var(--Very-dark-grayish-blue);
+}
+
+/* ?--------------CARD5-------------- */
+.card5 {
+    background-color: var(--White);
+}
+.card5 h4, .card5 .name, .card5 p, .card5 .status {
+    color: var(--Very-dark-grayish-blue);
+}
+
+/* ?--------------FOOTER-------------- */
+footer {
+    margin: -25px auto 30px auto;
+}
+.attribution {
+    font-size: 1.4rem; text-align: center;
+}
+.attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: hsl(228, 45%, 44%);
+}
+
+/* ?--------------MEDIA QUERIES-------------- */
+/* !--------768px-------- */
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "card1 card1 card2"
+        "card3 card4 card4"
+        "card5 card5 card5";
+        gap: 20px;
+    }
+    main .cards {
+        margin-top: 0;
+    }
+    .card1 {
+        grid-area: card1;
+    }
+    .card2 {
+        grid-area: card2;
+    }
+    .card3 {
+        grid-area: card3;
+    }
+    .card4 {
+        grid-area: card4;
+    }
+    .card5 {
+        grid-area: card5;
+    }
+    .attribution {
+        font-size: 1.7rem; text-align: center;
+    }
+}
+
+/* !--------1080px-------- */
+@media screen and (min-width: 1080px) {
+    main {
+        margin: 140px auto;
+        max-width: 1250px;
+        max-height: 600px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5"
+        ;
+        gap: 30px;
+    }
+    footer {
+        margin-top: -30px;
+    }
+    .attribution {
+        font-size: 1.8rem; text-align: center;
+    }
+}
